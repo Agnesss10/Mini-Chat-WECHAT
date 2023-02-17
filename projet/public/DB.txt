@@ -1,0 +1,8 @@
+CREATE TABLE messages(
+	id_message INTEGER PRIMARY KEY AUTO_INCREMENT,
+	user_env_id INTEGER REFERENCES users(id),
+	user_rec_id INTEGER REFERENCES users(id),
+	message VARCHAR(5000),
+	created_at TIMESTAMP,
+	updated_at TIMESTAMP,
+	deleted_at TIMESTAMP);

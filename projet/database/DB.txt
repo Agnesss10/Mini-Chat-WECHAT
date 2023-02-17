@@ -1,0 +1,15 @@
+CREATE TABLE users (user_id INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
+                  pseudo VARCHAR(20) UNIQUE,
+                  mdp VARCHAR(20),
+                  nom VARCHAR(20),
+                  prenom VARCHAR(20),
+                  numTel VARCHAR(20) UNIQUE,
+                  mail VARCHAR(30) UNIQUE);
+
+
+
+CREATE TABLE messages(message_id INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
+                     id_env INTEGER NOT NULL REFERENCES users(user_id),
+                     id_rec INTEGER NOT NULL REFERENCES users(user_id),
+                     message VARCHAR(2000),
+                     m_date DATETIME);
